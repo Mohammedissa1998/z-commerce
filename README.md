@@ -19,7 +19,7 @@ In this section, the key points about technologies used in the project are menti
 ### Technologies and Dependencies
 
 * Project is created with:
-  * Laravel: v9.37.0
+  * Laravel: v8.0
   * OS: Windows 11
 
 ### Installing & Executing program
