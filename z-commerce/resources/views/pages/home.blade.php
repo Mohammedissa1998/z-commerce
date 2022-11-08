@@ -1,6 +1,8 @@
 @extends('layouts.master')
 @section('name', 'Home page')
 @section('content')
+<main class="homepage">
 
-    home page
+
+</main>
 @endsection
