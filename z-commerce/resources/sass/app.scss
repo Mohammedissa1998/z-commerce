@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-@import '_global.sass';
 @import '_variable.sass';
+@import '_global.sass';
 @import 'partials/_nav.sass';
 
 //pages
-@import './pages/home.sass'
+@import './pages/home.sass';
+@import './pages/auth.sass'
