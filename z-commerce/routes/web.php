@@ -21,3 +21,4 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 //Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'postRegister'])->name('register');
