@@ -4,10 +4,12 @@
 <main class="homepage">
 
 @include('pages.components.home.header')
-<form action="{{route('logout)}}" method="post">
+@auth
+    <form action="{{route('logout')}}" method="post">
+    @csrf
+    <button class="btn btn-primary">logout</button>
 
-<button class="btn-primary"></button>
-
-</form>
+        </form>
+ @endauth
 </main>
 @endsection

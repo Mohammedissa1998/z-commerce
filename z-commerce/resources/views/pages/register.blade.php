@@ -6,14 +6,6 @@
         <div class="login-form-box">
             <div class="login-title"> Register</div>
             <div class="login-form">
-
-
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    <div class="alert alert-danger">{{$error}}</div>
-                @endforeach
-            @endif
-
             
             <form action="{{route('register')}}" method="post">
                 
@@ -21,20 +13,26 @@
                     
                     <div class="field">
                         <label for="name">name</label>
-                        <input type="text" id="name" name="name" placeholder="john" >
-
+                        <input type="text" id="name" name="name" class="@error('name') has-error @enderror" placeholder="john" >
+                        @error('name')
+                        <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="field">
                         <label for="email">email</label>
-                        <input type="email" id="email" name="email" placeholder="john@gmail.com" >
-
+                        <input type="email" id="email" name="email" class="@error('email') has-error @enderror"  placeholder="john@gmail.com" >
+                        @error('email')
+                        <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="field">
                         <label for="password">password</label>
-                        <input type="password" id="password" name="password" placeholder="******" >
-
+                        <input type="password" id="password" name="password" class="@error('password') has-error @enderror"  placeholder="******" >
+                        @error('password')
+                        <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="field">

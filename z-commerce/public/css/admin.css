@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.btn {
+  padding: 10px 35px;
+  border-radius: 300px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #6100ff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: #260064;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.side-nav {
+  background: #6100ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  padding: 40px 0;
+  color: #fff;
+}
+.side-nav .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 20px;
+  border-bottom: 1px dashed gray;
+  padding-bottom: 15px;
+  margin-bottom: 40px;
+}
+.side-nav .logo img {
+  height: 45px;
+  max-width: 100%;
+}
+.side-nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 5px;
+  padding: 0 10px;
+}
+.side-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 25px;
+  background-color: #4900c7;
+  border-radius: 3px;
+  font-weight: 200;
+  display: flex;
+  transition: all 0.1s ease;
+}
+.side-nav ul li a:hover {
+  background: #fff;
+  color: #6100ff;
+  font-weight: 500;
+  transform: skewX(-15deg);
+}
+.side-nav .logout button {
+  background: rgba(255, 0, 0, 0.3411764706);
+  border: 1px solid rgba(255, 255, 255, 0.4784313725);
+  position: absolute;
+  left: 15px;
+  left-bottom: 15px;
+  left-color: #fff;
+  left-display: flex;
+  left-justify-content: center;
+  left-align-items: center;
+  left-padding: 5px 25px;
+  left-border-radius: 200px;
+  left-font-size: 12px;
+  left-transition: all 0.4s ease;
+  left-font-weight: 300;
+}
+.side-nav .logout button:hover {
+  background: #e91e1e;
+}

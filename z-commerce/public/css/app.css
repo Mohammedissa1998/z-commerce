@@ -151,3 +151,11 @@ li a:hover {
   border-radius: 200px;
   border: 1px solid #ddd;
 }
+.login-page .field .has-error {
+  border-color: #e91e1e;
+}
+.login-page .field-error {
+  color: #e91e1e;
+  font-size: 13px;
+  margin-top: 2px;
+}
