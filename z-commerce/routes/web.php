@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +26,18 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'postRegister'])->name('register')->middleware('guest');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login')->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
-Route::get('/adminpanel', [AdminController::class, 'dashboard'])->name('adminpanel')->middleware('admin');
+Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function()
+{
+    Route::get('/', [AdminController::class, 'dashboard'])->name('adminpanel');
+
+    //products
+    Route::group(["prefix" => 'products'], function()
+    {
+        Route::get('/', [ProductController::class, 'index'])->name('adminpanel.products');
+        Route::get('/create', [ProductController::class, 'create'])->name('adminpanel.create');
+        Route::post('/create', [ProductController::class, 'store'])->name('adminpanel.store');
+
+
+    });
+
+});

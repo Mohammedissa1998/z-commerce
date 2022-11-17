@@ -29,6 +29,15 @@ body {
   width: 100%;
 }
 
+.admin-main {
+  margin-left: 300px;
+}
+
+.page-title {
+  color: #6100ff;
+  margin-bottom: 15px;
+}
+
 .side-nav {
   background: #6100ff;
   position: fixed;

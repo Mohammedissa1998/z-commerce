@@ -2,6 +2,6 @@
 @section('title','Dashboard')
 @section('content')
 
-<h1>Dashboard</h1>
+<h1 class="page-title">Dashboard</h1>
 
 @endsection
