@@ -38,6 +38,8 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function()
         Route::get('/', [ProductController::class, 'index'])->name('adminpanel.products');
         Route::get('/create', [ProductController::class, 'create'])->name('adminpanel.products.create');
         Route::post('/create', [ProductController::class, 'store'])->name('adminpanel.products.store');
+        Route::get('/{id}', [ProductController::class, 'edit'])->name('adminpanel.products.edit');
+        Route::delete('/{id}', [ProductController::class, 'destroy'])->name('adminpanel.products.destroy');
 
 
     });

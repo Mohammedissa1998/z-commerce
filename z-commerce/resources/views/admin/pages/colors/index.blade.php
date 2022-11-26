@@ -71,7 +71,7 @@
                                         <td>{{$color->name}}</td>
                                         <td> 
                                         <div style="display : flex; align-items: center; gap: 10px; ">
-                                        {{$color->code}} <span style="display: inline-block; width:30px; height: 30px; border-radius: 50%; background: {{$color->code}}"></span>
+                                         <span style="display: inline-block; width:30px; height: 30px; border-radius: 50%; background: {{$color->code}}"></span>
                                         </div>
                                         </td>
                                         <td>{{\Carbon\Carbon::parse($color->created_at)->format('d/m/Y')}}</td>
