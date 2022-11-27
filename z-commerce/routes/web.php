@@ -40,6 +40,7 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function()
         Route::post('/create', [ProductController::class, 'store'])->name('adminpanel.products.store');
         Route::get('/{id}', [ProductController::class, 'edit'])->name('adminpanel.products.edit');
         Route::delete('/{id}', [ProductController::class, 'destroy'])->name('adminpanel.products.destroy');
+        Route::put('/{id}', [ProductController::class, 'update'])->name('adminpanel.products.edit');
 
 
     });
