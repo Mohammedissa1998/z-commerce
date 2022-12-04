@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\PagesController;
@@ -24,6 +25,9 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
 Route::get('/products/{id}', [PagesController::class, 'product'])->name('product');
+
+//cart
+Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
 
 
 //Auth

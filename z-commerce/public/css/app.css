@@ -15,6 +15,7 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -23,6 +24,16 @@ body {
 }
 .btn-primary:hover {
   background: #260064;
+}
+
+.btn-outlined {
+  border: 1px solid #260064;
+  background: #efefef;
+  color: #260064;
+}
+.btn-outlined:hover {
+  background: #260064;
+  color: #fff;
 }
 
 .btn-block {
@@ -330,4 +341,34 @@ li a:hover {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+.pop-up {
+  background: rgba(0, 0, 0, 0.04);
+  position: fixed;
+  top: 8;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+.pop-up .pop-up-box {
+  background: #fff;
+  padding: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+.pop-up .pop-up-box .pop-up-title {
+  color: #260064;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.pop-up .pop-up-box .pop-up-actions {
+  display: flex;
+  justify-content: center;
+  gap: 29;
 }

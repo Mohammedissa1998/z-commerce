@@ -15,6 +15,8 @@ class PagesController extends Controller
 
     //cart
     public function cart(){
+
+        
         return view('pages/cart');
     }
 
