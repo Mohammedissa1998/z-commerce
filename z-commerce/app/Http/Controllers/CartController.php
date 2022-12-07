@@ -61,4 +61,19 @@ class CartController extends Controller
 
         }
 
+        public function removeFromCart($key)
+        {
+            if(session()->has('cart'))
+            {
+                $cart = session()->get('cart');
+                array_splice($cart, $key, 1);
+                session()->put('cart', $cart);
+                return back()->with('success', 'Product removed from cart');
+            }
+
+            return back();
+
+
+        }
+
 }

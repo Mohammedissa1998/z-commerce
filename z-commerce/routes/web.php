@@ -24,10 +24,12 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
+Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/products/{id}', [PagesController::class, 'product'])->name('product');
 
 //cart
-Route::get('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/remove-from-cart/{id}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 
 
 //Auth

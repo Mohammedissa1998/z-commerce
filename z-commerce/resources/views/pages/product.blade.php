@@ -2,15 +2,15 @@
 @section('title', $product->title)
 @section('content')
 
-@if (session()->has('addedToCart'))
+@if (session()->has('success'))
     <section class="pop-up">
         <div class="pop-up-box">
             <div class="pop-up-title">
-                {{session()->get('addedToCart')}}
+                {{session()->get('success')}}
             </div>
             <div class="pop-up-actions">
-                <a href="{{route('home')}}" class="btn btn-outlined" >Continue Shopping</a>
-                <a href="{{route('cart')}}" class="btn btn-primary" >Go To Cart</a>
+                <a href="{{route('cart')}}" class="btn btn-outlined" >Continue Shopping</a>
+                <a href="{{route('cart')}}" class="btn btn-primary" >Go To Checkout</a>
 
             </div>
         </div>
@@ -29,7 +29,7 @@
                     <p class="p-price">${{$product->price/100}}</p>
                     <p class="p-category">-{{$product->category->name}}</p>
                     <p class="p-description">{{$product->description}}</p>
-                    <form action = "{{route('addToCart', $product->id)}}" method="GET">
+                    <form action = "{{route('addToCart', $product->id)}}" method="post">
 
                     @csrf 
                     <div class="p-form">

@@ -26,6 +26,10 @@ class PagesController extends Controller
     }
 
 
+    public function checkout(){
+        return view('pages.checkout');
+    }
+
     public function account(){
         return view('pages.account');
     }

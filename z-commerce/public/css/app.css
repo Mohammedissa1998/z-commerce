@@ -45,6 +45,25 @@ body {
   margin: 0 auto;
 }
 
+.page-header {
+  background: linear-gradient(to bottom, #6100ff, #d38eff);
+  padding: 100px 25px 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0 0 50% 50%;
+  color: #fff;
+}
+.page-header h1 {
+  font-size: 45px;
+  font-weight: 600;
+}
+.page-header h3 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
 .menu {
   background: #6100ff;
   height: 60px;
@@ -174,19 +193,21 @@ li a:hover {
   margin-bottom: 30px;
   color: #260064;
 }
-.login-page .field {
+
+.field {
   margin-bottom: 25px;
 }
-.login-page .field input {
+.field input, .field select {
   width: 100%;
   padding: 10px 15px;
   border-radius: 200px;
   border: 1px solid #ddd;
 }
-.login-page .field .has-error {
+.field .has-error {
   border-color: #e91e1e;
 }
-.login-page .field-error {
+
+.field-error {
   color: #e91e1e;
   font-size: 13px;
   margin-top: 2px;
@@ -282,6 +303,73 @@ li a:hover {
   font-weight: 600;
   -webkit-appearance: none;
 }
+.cart-page {
+  padding: 70px 15px;
+  background: #fafafa;
+}
+.cart-page .cart-table {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+.cart-page .table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.cart-page .table thead tr {
+  background: #6100ff;
+  color: #fff;
+}
+.cart-page .table thead tr th {
+  padding: 10px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.cart-page .table tbody tr td {
+  padding: 10px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.cart-page .table tbody tr td .cart-item-title {
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #6100ff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cart-page .table tbody tr td .cart-item-title img {
+  width: 50px;
+}
+.cart-page .table tbody .cart-total td {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6100ff;
+}
+.cart-page .cart-actions {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.checkout-page {
+  padding: 70px 0;
+  background: #fafafa;
+}
+.checkout-page .checkout-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+  padding: 30px;
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .product-box {
   border-radius: 3px;
   background: #fff;
