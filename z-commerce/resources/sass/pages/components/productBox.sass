@@ -6,7 +6,6 @@
     box-shadow: 0 8px 40px 0 rgba(49, 32, 138, 5%)
     text-align: center
     max-width: 270px
-    text-decoration: none
     transition: all 0.4s ease
 
     &:hover
@@ -14,6 +13,29 @@
         .image
             background: linear-gradient(to bottom right, #6100ff, #FFC0CB )
 
+            .add-to-wishlist
+                display: block
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%  )
+                background: #fff
+                border-radius: 200px
+                padding: 10px 25px
+                width: 200px
+                max-width: 90%
+                font-weight: 400
+                transition: all 0.3s ease
+                border: none
+                cursor: pointer
+
+
+                &:hover
+                    background: #FFC0CB
+                    color: #fff
+
+
+            
     .image
         background: #f6f7f8
         height: 230px
@@ -24,9 +46,17 @@
         justify-content: center
         margin-bottom: 10px
         transition: all 0.4s ease
+        position: relative
         img
             max-width: 100%
             max-height: 100%
+
+        .add-to-wishlist
+            display: none
+
+    
+    a
+         text-decoration: none
 
     .product-title
         font-size: 18px

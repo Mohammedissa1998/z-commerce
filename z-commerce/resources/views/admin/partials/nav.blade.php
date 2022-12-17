@@ -37,7 +37,7 @@ ADMINPANEL
 
     <li>
 
-        <a href="">Orders</a>
+        <a href="{{route('adminpanel.orders')}}">Orders</a>
 
     </li>
 

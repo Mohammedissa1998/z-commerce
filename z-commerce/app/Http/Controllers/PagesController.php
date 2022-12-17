@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
@@ -22,7 +23,8 @@ class PagesController extends Controller
 
 
     public function wishlist(){
-        return view('pages.wishlist');
+        $products = Auth::User()->wishlist;
+        return view('pages.wishlist', ['products' => $products]);
     }
 
 
@@ -32,6 +34,10 @@ class PagesController extends Controller
 
     public function account(){
         return view('pages.account');
+    }
+
+    public function success(){
+        return 'succesfully done';
     }
 
     public function product($id)

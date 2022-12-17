@@ -21,9 +21,13 @@ class Cart
     public static function totalAmount()
     {
         $total = 0;
-        foreach(session('cart') as $item)
+        if(session()->has('cart'))
         {
-            $total += self::unitPrice($item);
+            foreach(session('cart') as $item)
+            {
+                $total += self::unitPrice($item);
+            }
+           
         }
         return $total;
     }
