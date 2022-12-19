@@ -6,6 +6,14 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                 @endif
+
                 <div class="card">
                     <div class="card-header">
                     <h5>create Product</h5>
@@ -44,7 +52,7 @@
                             </div> <!-- .row -->
 
                             <div class="row mb-3">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                 <div class="form-group">
 
                                     <label for="category">Category</label>
@@ -63,7 +71,24 @@
 
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                <div class="form-group">
+
+                                    <label for="category">Sub Category</label>
+                                    <select name="sub_categorie_id" id="sub_category_id" class="form-control @error('sub_categorie_id') is-invalid @enderror ">
+                                        <option value="">-- Select Sub Category --</option> 
+
+                                    </select>
+                                    @error('sub_categorie_id')
+                                    <span class="invalid-feedback">
+                                        <strong>{{$message}}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+
+                                </div>
+
+                                <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="image">Image</label>
                                     <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
@@ -137,3 +162,36 @@
         </div>
 </div>
 @endsection
+
+@push('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        @if(old('category_id'))
+            getSubCat('{{ old('category_id') }}', '{{ old('sub_categorie_id') }}');
+        @endif
+
+        $('#category_id').on('change', function(e) {
+            var id = $(this).val();
+            if(id) {
+                getSubCat(id);
+            }
+        })
+
+        function getSubCat(id, subid=false){
+            $.ajax({
+                url: "{{ route('adminpanel.products.subcategories') }}",
+                method: "post",
+                data: {
+                    category_id: id,
+                    subcat_id: subid,
+                    "_token": "{{csrf_token()}}"
+                },
+                success: function (res) {
+                    // console.log(res)
+                    $('#sub_category_id').html(res);
+                }
+            })
+        }
+    </script>
+@endpush

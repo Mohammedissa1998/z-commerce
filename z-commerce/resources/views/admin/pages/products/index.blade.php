@@ -7,7 +7,7 @@
     <div class="text-end mb-3">
     <a href="{{route('adminpanel.products.create')}}" class="btn btn-primary"> Create Product</a>
     </div>
-<div class="row">
+        <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
@@ -34,7 +34,7 @@
                                         <td>{{$product->id}}</td>
                                         <td>{{$product->title}}</td>
                                         <td>{{$product->price}}</td>
-                                        <td>{{$product->category->name}}</td>
+                                        <td>{{optional($product->category)->name}}</td>
                                         <td>
                                             @foreach($product->colors as $color)
                                             <span class="badge" style="background: {{$color->code}}">{{$color->name}}</span>

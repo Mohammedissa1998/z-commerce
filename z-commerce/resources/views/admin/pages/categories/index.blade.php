@@ -6,6 +6,14 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-6 offset-md3">
+                @if($errors->any())
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger" role="alert">
+                            {{$error}}
+                        </div>
+                    @endforeach
+                 @endif
+                 
                 <div class="card">
                     <div class="card-header">
                     <h5>create category</h5>
@@ -59,11 +67,12 @@
                                         <td></td>
                                         <td>{{\Carbon\Carbon::parse($category->created_at)->format('d/m/Y')}}</td>
                                         <td>
-                                            <form action="{{route('adminpanel.category.destroy', $category->id )}}" method="post">
+                                            <a href="{{ route('categories.subcategories.index', $category) }}" class="btn btn-info">Sub Categorys</a>
+                                            <a href="{{ route('adminpanel.category.edit', $category) }}" class="btn btn-warning">Edit</a>
+                                            <a href="#" class="btn btn-danger delete-item" data-id="{{$category->id}}">Delete</a>
+                                            <form action="{{route('adminpanel.category.destroy', $category->id )}}" id="delete-form-{{ $category->id }}" method="post" class="d-none">
                                                 @csrf 
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-
                                             </form>
                                         </td>
                                     </tr>
@@ -78,3 +87,18 @@
     </div>
 
 @endsection
+
+@push('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $('.delete-item').on('click', function(e) {
+            e.preventDefault();
+            if(!confirm('Are you sure?')) {
+                return;
+            }
+            var id = $(this).data('id');
+            $('#delete-form-'+id).submit();
+        })
+    </script>
+@endpush

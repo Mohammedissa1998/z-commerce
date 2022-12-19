@@ -1,16 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SubCategorieController;
 use App\Http\Controllers\WishlistController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/success', [PagesController::class, 'success'])->name('success');
 
 
 Route::get('/', [PagesController::class, 'home'])->name('home');
+Route::match(['get', 'post'], '/product-results', [PagesController::class, 'search'])->name('search');
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
@@ -52,6 +54,7 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('register
 Route::post('/register', [AuthController::class, 'postRegister'])->name('register')->middleware('guest');
 Route::post('/login', [AuthController::class, 'postLogin'])->name('login')->middleware('guest');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+Route::post('/get-subcategories', [ProductController::class, 'getSubcategories'])->name('adminpanel.products.subcategories');
 Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function()
 {
     Route::get('/', [AdminController::class, 'dashboard'])->name('adminpanel');
@@ -73,10 +76,14 @@ Route::group(['prefix' => 'adminpanel', 'middleware' => 'admin'], function()
     {
         Route::get('/', [CategoryController::class, 'index'])->name('adminpanel.categories');
         Route::post('/', [CategoryController::class, 'store'])->name('adminpanel.category.store');
+        Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('adminpanel.category.edit');
+        Route::post('/update/{id}', [CategoryController::class, 'update'])->name('adminpanel.category.update');
         Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('adminpanel.category.destroy');
  
 
     });
+
+    Route::resource('categories.subcategories', SubCategorieController::class);
 
     Route::group(["prefix" => 'colors'], function()
     {

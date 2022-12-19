@@ -1,64 +1,70 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Overview
+This file explains this project.
+It contains information that is commonly required to understand what this project is about.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Project Name z-commerce
+This project implements a simple clothing store targeted for generation z people called z-commerce. The website is a simple e-commerce website that allows admins to create products and classify them into categories. And it allows customers to make orders.
 
-## About Laravel
+# Table of contents
+* [Project Setup](#project-setup)
+* [Project Requirements](#project-requirements)
+* [Database Schema](#database-schema)
+* [Demo](#demo)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+In this section, the key points about technologies used in the project are mentioned, along with how the project can be run.
 
-## Learning Laravel
+### Technologies and Dependencies
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Project is created with:
+  * Laravel: v8.0
+  * OS: Windows 11
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Installing & Executing program
 
-## Laravel Sponsors
+To run this project locally, just download a copy of the code and run the following commands:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+$ cd z-commerce # this is the project folder you downloaded
+$ composer install
+$ php artisan migrate
+$ php artisan serve
+```
 
-### Premium Partners
+## Project Requirements
+In this section, a list of all the requirements/features of the project are presented.
+Put an X between the brackets for each feature that has been developed and tested by you.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Admin:
+- [ ] An Admin account should be created by the developer.
+- [ ] The admin should be able to log into the website.
+- [ ] The logged-in admin should be able to create, list, update, and delete different product categories and subcategories.
+- [ ] The logged-in admin should be able to create, list, update, and delete different products.
+- [ ] The logged-in admin should be able to add and remove products from subcategories.
+- [ ] The logged-in admin should be able to see a list of customer orders.
+- [ ] The logged-in admin should be able to view the details of customer orders.
+- [ ] The logged-in admin should be able to update any order’s status.
+- [ ] The logged-in admin should be able to log out of the website.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Customer:
+- [ ] The customer should be able to see a list of products on the website.
+- [ ] The customer should be able to search for products by name.
+- [ ] The customer should be able to filter products.
+- [ ] The customer should be able to view a specific product’s details.
+- [ ] The customer should be able to register an account on the website.
+- [ ] The customer should be able to log into their account on the website.
+- [ ] The logged-in customer should be able to add a product to their shopping cart.
+- [ ] The logged-in customer should be able to view the products added to their cart.
+- [ ] The logged-in customer should be able to remove a product that was added to their shopping cart.
+- [ ] The logged-in customer should be able to complete their order by entering their shipping information and confirming their order.
+- [ ] The logged-in customer should be able to view a list of their orders and their statuses.
+- [ ] The logged-in customer should be able to view the details of their orders.
+- [ ] The logged-in customer should be able to log out of the website.
 
-## Code of Conduct
+## Database Schema
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Demo 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

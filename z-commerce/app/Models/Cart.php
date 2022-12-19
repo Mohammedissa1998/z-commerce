@@ -25,7 +25,7 @@ class Cart
         {
             foreach(session('cart') as $item)
             {
-                $total += self::unitPrice($item);
+                $total += (int) self::unitPrice($item);
             }
            
         }

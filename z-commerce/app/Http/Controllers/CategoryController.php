@@ -15,7 +15,6 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
-
         //validate
         $request->validate([
             'name' => 'required|unique:categories|max:255'
@@ -29,8 +28,25 @@ class CategoryController extends Controller
         //return back
         
         return back()->with('success','Category Saved');
+    }
 
+    public function edit($id){
+        $categorie = Category::findOrfail($id);
+        return view('admin.pages.categories.edit', ['categorie' => $categorie]);
+    }
 
+    public function update(Request $request, $id){
+        //validate
+        $request->validate([
+            'name' => 'required|unique:categories,name,'.$id.'|max:255'
+        ]);
+
+        $category = Category::findOrfail($id);
+        $category -> name = $request->name;
+        $category->save();
+        //return back
+        
+        return back()->with('success','Category Update');
     }
 
     public function destroy($id){

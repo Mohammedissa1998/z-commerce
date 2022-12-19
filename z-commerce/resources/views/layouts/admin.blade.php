@@ -30,6 +30,8 @@
     </div>
 @endif
             @yield('content')
-    </main>
+</main>
+
+@stack('script')
 </body>
 </html>

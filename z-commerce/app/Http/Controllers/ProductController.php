@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Color;
 use App\Models\Product;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -33,11 +34,12 @@ class ProductController extends Controller
     {   //validate
         $request->validate([
 
-            'title' => 'required|max:255',
-            'category_id' => 'required',
-            'colors' => 'required',
-            'price' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'title'           => 'required|max:255',
+            'category_id'     => 'required',
+            'sub_categorie_id' => 'required',
+            'colors'          => 'required',
+            'price'           => 'required',
+            'image'           => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
 
         ]);
@@ -48,11 +50,12 @@ class ProductController extends Controller
         //store
         $product = Product::create([
 
-            'title' => $request->title,
-            'category_id' =>$request->category_id,
-            'price' => $request->price *100,
-            'description' => $request-> description,
-            'image' => $image_name
+            'title'           => $request->title,
+            'category_id'     => $request->category_id,
+            'sub_categorie_id' => $request->sub_categorie_id,
+            'price'           => $request->price *100,
+            'description'     => $request-> description,
+            'image'           => $image_name
             
         ]);
         
@@ -69,24 +72,23 @@ class ProductController extends Controller
     //edit
     public function edit($id)
     {
-        $product = Product::findOrFail($id);
+        $product    = Product::findOrFail($id);
         $categories = Category::all();
-        $colors = Color::all();
+        $colors     = Color::all();
         return view('admin.pages.products.edit', ['categories' => $categories, 'colors' => $colors, 'product'  => $product]);
     }
 
     //update
     public function update(Request $request, $id)
     {
-
+        // dd($request->sub_categorie_id);
         $request->validate([
-
-            'title' => 'required|max:255',
-            'category_id' => 'required',
-            'colors' => 'required',
-            'price' => 'required',
-            'image' => '|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-
+            'title'           => 'required|max:255',
+            'category_id'     => 'required',
+            'sub_categorie_id' => 'required',
+            'colors'          => 'required',
+            'price'           => 'required',
+            'image'           => '|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
         ]);
      
@@ -102,11 +104,12 @@ class ProductController extends Controller
         //store
         $product->update([
 
-            'title' => $request->title,
-            'category_id' =>$request->category_id,
-            'price' => $request->price *100,
-            'description' => $request-> description,
-            'image' => $image_name
+            'title'           => $request->title,
+            'category_id'     => $request->category_id,
+            'sub_categorie_id' => $request->sub_categorie_id,
+            'price'           => $request->price *100,
+            'description'     => $request-> description,
+            'image'           => $image_name
             
         ]);
         
@@ -122,6 +125,24 @@ class ProductController extends Controller
         Product::findOrFail($id)->delete();
         return back()->with('success', 'Product deleted');
 
+    }
+
+    public function getSubcategories(Request $request)
+    {
+        $subcategories = SubCategory::where('categorie_id', $request->category_id)->get();
+        $options = '<option value="">-- Select Sub Category --</option>';
+        $selected = '';
+        foreach($subcategories as $each) {
+            if($request->has('subcat_id')) {
+                if($request->subcat_id == $each->id) {
+                    $selected = 'selected';
+                } else {
+                    $selected = '';
+                }
+            }
+            $options .= '<option value="'.$each->id.'" '.$selected.'>'.$each->name.'</option>';
+        }
+        return $options;
     }
 
 

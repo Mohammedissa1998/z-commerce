@@ -75,6 +75,7 @@ body {
 
 .logo {
   height: 46px;
+  
 }
 
 ul {
@@ -284,7 +285,7 @@ li a:hover {
   display: flex;
 }
 .product-page .product-page-row .product-page-image {
-  width: 50%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;

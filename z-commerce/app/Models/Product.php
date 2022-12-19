@@ -15,14 +15,16 @@ class Product extends Model
 
     //Has one category
     public function category(){
-
         return $this->belongsTo(Category::class);
+    }
 
+    //Has one category
+    public function subcategory(){
+        return $this->belongsTo(SubCategory::class);
     }
 
 
     //has one or many colors
-
     public function colors(){
 
         return $this->belongsToMany(Color::class);
