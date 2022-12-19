@@ -33,7 +33,7 @@
                                     
                                         <td>{{$product->id}}</td>
                                         <td>{{$product->title}}</td>
-                                        <td>{{$product->price}}</td>
+                                        <td>${{$product->price/100}}</td>
                                         <td>{{optional($product->category)->name}}</td>
                                         <td>
                                             @foreach($product->colors as $color)
