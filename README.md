@@ -64,6 +64,7 @@ Put an X between the brackets for each feature that has been developed and teste
 - [ ] The logged-in customer should be able to log out of the website.
 
 ## Database Schema
+![database er (1) (1)](https://user-images.githubusercontent.com/33748234/208463574-56f63b66-bdb8-414c-9d76-a5f09bc71fbc.jpg)
 
 
 ## Demo 
