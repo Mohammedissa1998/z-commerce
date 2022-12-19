@@ -2,8 +2,8 @@
 This file explains this project.
 It contains information that is commonly required to understand what this project is about.
 
-# Project Name z-commerce
-This project implements a simple clothing store targeted for generation z people called z-commerce. The website is a simple e-commerce website that allows admins to create products and classify them into categories. And it allows customers to make orders.
+# Project Name E store
+This project implements a simple clothing store targeted for generation z people called E store. The website is a simple e-commerce website that allows admins to create products and classify them into categories. And it allows customers to make orders.
 
 # Table of contents
 * [Project Setup](#project-setup)
@@ -64,6 +64,7 @@ Put an X between the brackets for each feature that has been developed and teste
 - [ ] The logged-in customer should be able to log out of the website.
 
 ## Database Schema
+![database er (1) (1)](https://user-images.githubusercontent.com/33748234/208462123-2f2e332d-a90a-41d6-978e-abf90c2af08d.jpg)
 
 
 ## Demo 
