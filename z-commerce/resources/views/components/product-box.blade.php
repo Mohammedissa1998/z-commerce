@@ -26,7 +26,7 @@
                     </div>
                 
            
-        <div class="product-category">Chairs</div>
+        <div class="product-category">{{$product->title}}</div>
         <div class="product-price">${{$product->price / 100}}</div>
         </a>
 </section>
