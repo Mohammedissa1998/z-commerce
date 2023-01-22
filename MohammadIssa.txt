@@ -1,0 +1,13 @@
+Mohammad Issa-mohammed_eissa-lb@outlook.com-https://youtu.be/N5rTCySLtFU
+
+Dear Mohammad your project was excellent,you submitted all the core functionalities for
+both the admin and customer you also have used laravel framework as requested.
+The ERD diagram was very good. It showed a full understanding of the project and relationships.
+
+Excellent design-intput and output screens-with logo-proffessional looking .You did a full demo of admin and customer functionalities during the discussion with a full understanding.
+Excellent validation-excellent payment module.
+
+Filteration techniques were excellent.It's easy for the customer to search.
+The project was user friendly,excellent application of authorities and permissions,excellent filters .
+The interview was very intersesting becauase it's very clear that you worked really hard through this course.
+
